@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Create Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create Note Page</h1>
+
+    <form method="post" action="/Note/Create">
+        <div class="mb-3">
+            <label for="InputTitle1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="Title1" name="Title">
+        </div>
+        <div class="mb-3">
+            <label for="InputSubject1" class="form-label">Note</label>
+            <textarea rows="7" type="text" class="form-control" id="Subject1" name="Text"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Note</button>
+    </form>
+
+</div>

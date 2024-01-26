@@ -1,0 +1,42 @@
+﻿@model List<dot_note.Models.Note>
+
+@{
+    ViewData["Title"] = "Notes";
+}
+
+<h1>Notes</h1>
+
+<p class="text-left">
+    <a asp-action="Create">Create a New Note</a>
+</p>
+
+<p class="text-right">
+    <a asp-action="Logout" asp-controller="User">Log Out</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Text</th>
+            <th>Created At</th>
+            <th>Modified At</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var note in Model)
+        {
+            <tr>
+                <td>@note.Title</td>
+                <td>@note.Text</td>
+                <td>@note.CreatedAt</td>
+                <td>@note.ModifiedAt</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@note.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@note.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
